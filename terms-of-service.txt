@@ -1,0 +1,19 @@
+Terms of Service for "CMExpert", a classical music robot classifier.
+
+1) Users are defined as the ones who complete the (google) form
+   that is used as a human-benchmark for comparison for the 
+   current robot. 
+
+2) Completing the form is optional
+
+3) The public-domain songs are being made public in this "public 
+   Github Project" under the ".mid" (MIDI) format
+
+4) The logistic regressor script is algo being made public in this repo
+
+5) Besides the educational potential of the scripts here made public, 
+   and the educational potential of the public comparison against humans 
+   made with the ANONYMOUS DATA processed from the associated google-form, 
+   no benefit whatsoever is offered to "Users" defined at (1) 
+
+

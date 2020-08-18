@@ -1,0 +1,196 @@
+Hi, welcome to the...
+
+_________TIME-ORDERED TUTORIAL_____
+
+**********
+START HERE
+**********************
+At first the directory should contain: 
+*********************************************
+               .___                      (sometimes
+               |   -AI_data(link)----.    links to OR) -->(provide the full
+               |                     |    "compressed      compressed database
+               |   -poll_data(link)  |-->  directories"    via GitHub was too 
+directories--> |                     |      (datasets)                 large)
+               |    -raw_data.zip  __/
+               |                 
+               *___ -App      ----->  unCompressed
+                                       directory
+                                          
+              .-----process1.py        The general idea is:
+scripts -->   |                           "We should be able to
+              *----process2.sh             obtain the same result
+                                           by applying the script
+                                           to the raw data than by 
+an image(*)--->  image.png                 downloading and
+                                           unzipping the datasets"
+
+(*tagged for non-commercial with mods. in 
+google image search)
+***************P*A*R*T*1*******************
+PART 1: GENERATE THE MACHINE-LEARNING DATA:
+
+raw MIDI's will be split into "training" 
+and "testing" datasets. Format ".csv" files
+will be built using the three main MIDI
+parameters: pitch, time & intensity 
+*******************************************
+
+1) Downloading & Unzipping "raw_data.zip" 
+   should yield the same result as running
+   "process1.py"*.
+    Script generates the directory 
+    called "AI_data". 
+ 
+*by running 'python process1.py' in command-line
+     
+OR Alternatively download "AI_data.zip"
+from here and unzip it 
+"https://drive.google.com/file/d/1GKpEvLi4Emmmksuoet-Yb4VHaSD2JVm4/view?usp=sharing"
+____________________________________________.
+A quick view of the inside of the directory:|
+____________________________________________|
+AI_data - 
+          -Author1:
+             -trainingSong1.mid
+             -trainingSong1.csv
+                 ....
+             -trainingSongN.mid
+             -trainingSongN.csv
+                 ....
+             -notTrain  
+                -testingSong1.mid
+                -testingSong1.csv
+                    ....
+          -Author2:
+              ...etc
+____________________________________________/
+
+***************P*A*R*T*2******************
+PART 2: GENERATE THE HUMAN-EXPERIMENT DATA:
+
+Samples that AI-Models will use as "testing
+set" are transformed into MP4 with 'unin-
+formative tags'; i.e. "title tags that dont 
+reveal the author". A mapping between the 
+'uninformative titles' and the song name
+will be kept in a refs.dat mentioned below
+******************************************
+
+2) Running* "process2.sh" generates the
+     directory "poll_data"
+ 
+*by running 'bash process2.sh' in command-line
+     
+OR Alternatively download "poll_data.zip"
+from here and unzip it
+"https://drive.google.com/file/d/1hQCMv_otZ7wE7lw502ThOprs3EoDz2Nw/view?usp=sharing"
+____________________________________________.
+A quick view of the inside of the directory:|
+____________________________________________|
+poll_data - 
+          -Author1:
+             -testingSong1.mp3
+             -testingSong2.mp3
+                 ....
+          -Author2:
+             -testingSong1.mp3
+             -testingSong2.mp3
+                 ....
+          -samples:
+             -uploadvideo1.mp4
+             -uploadvideo2.mp4
+                 ....
+          -refs.dat
+____________________________________________/
+
+
+Extra:
+-----------------------------------------------
+a "refs.dat" will be created. It contains the |
+mapping between uploaded .MP4 files and the   |
+works. Naming "a","b","c","d" means they are  |
+starting from sec 0,20,40,75 respect; except: |
+-----------------------------------------------
+Number Author      Work          starting time|
+20     Haendel     12piec2d.mp3     t60       |
+52     Liszt       01pasalid.mp3    t60       |
+168    Stravinsky  stralcd4d.mp3    t60       |
+176    Stravinsky  variatiod.mp3    t60       |
+179    Vivaldi     611_4c.mp3       t10       |
+180    Vivaldi     611_4d.mp3       t30       |
+-----------------------------------------------
+
+
+
+****************P*A*R*T*3****************
+THIRD PART: RUN THE HUMAN-EXPERIMENT!
+
+Obviously a simple google form with fixed
+videos "could work". The guideline here has
+been that the longer the form (i.e. more 
+mandatory questions), the less independent
+the answers will be (e.g. "getting tired").
+Few questions with constant sample-changing
+was the chosen scheme and to do so you must
+set-up a GoogleScripts API account and 
+use the token to run a "JavaScript" (or
+"GoogleScript") code that will be operating
+a system composed by a GoogleForm and a 
+GoogleSpreadsheet where correct and incorrect
+answers are recorded as a function of time.
+To do so there are instructions:
+*****************************************
+
+3.A) Videos in "poll_data/samples" should be 
+     uploaded to some video hosting service.
+       .Youtube may simplify following the rest of the code
+       .The chosen service must be embeddable in GoogleForms 
+        (e.g. [surprisingly] GoogleDriveVideos isn't supported]) 
+
+3.B) IF the video hosting service chosen is YouTube:
+         .After you upload, you must create a public
+          playlist with all the videos. Videos inside
+          of it won't automatically be made public, 
+          so that's something to watch out for. As a
+          general guideline for what video-configuration
+          must be reached you should be able to embed 
+          any of the uploaded videos to a GoogleForm
+          AND IT SHOULD BE VIEWABLE. Setting them to 
+          "Public" works. 
+          
+         .You will need the link of all of them; in the 
+          "App" folder there is a script* provided for 
+          extracting all the links of a playlist' items.
+          To run it you will be required tu submit your
+          Google-Youtube-v3-API-Token in the command line.
+          Alternatively you can fetch the links manually.
+          (*App/linksplaylist.py)
+
+     IF the video is hosted elsewhere:
+         .Please obtain all the video links (manually?)
+
+3.C) You must upload the "GoogleScripts" code provided in
+     the "App" directory ("App/app.js") into the command
+     in "https://scripts.google.com".
+     I left my video-links in the header as an example; 
+     but you should replace them with YOUR results from 
+     (3.B)!!!
+     YOU WILL FINALLY NEED 3 MORE THINGS:
+          1) Setup a GoogleForm and a GoogleSpreadsheet
+          2) Paste their links in the "formlink" and 
+             "spreadsheetlink" boxes in the code in 
+             "app.js"
+          3) Manually modify the spreadsheet sheet-name
+             from (probably) "Sheet1" (default) to "Data"
+
+Finally note that this last part could be replaced by a 
+self-generating code that spawns both a GoogleForm and a 
+GoogleSpreadsheet. 
+
+
+
+
+-------UPCOMING NEXT! THE AI-PROCESSING PART!
+                Late August 2020
+

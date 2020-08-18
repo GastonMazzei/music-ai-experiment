@@ -1,0 +1,17 @@
+Hereby this "public-project" under MIT-License declares:
+
+1) All user-related information of the Associated Google
+   App "CMExpert" will be collected uniquely through the 
+   Google-Form
+
+2) All the information collected, besides the form-answers
+   which are of scientific and non-personal nature (i.e.
+   "guess which public-domain-song is being played), 
+   consists uniquely in the users' mails.
+
+3) Users' mails reside solely inside the Google-API database
+   and will not be used in any way by this public project. 
+   In particular they wont be made available.
+
+4) Contact support is available at tech-support-M4ZZ31@gmail.com
+
