@@ -1,0 +1,20 @@
+"Building the Quiz" means setting up an online
+quiz that changes samples randomply.  
+
+For that it is required to upload the 
+APP/app.JS script to GoogleScipts API
+
+   more info:
+   For this you should create (A) a Google
+   Spreadsheet and (B) a Google Forms. Their
+   respective codes should be added to the 
+   script. Finally upload the videos to (for
+   example) YouTube and add their links in 
+   the code. If a systematic extraction of
+   a playlist-links is desired, as opposed
+   to doing it manually, the script called
+   "./extra/linksplaylist.py" could be used
+   if you have a YoutubeV3API token. 
+   If you dont, you should. It's free!
+
+

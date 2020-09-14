@@ -1,0 +1,26 @@
+
+--------------I-N-F-O-------------
+In this section, a comparison between 
+humans and AI-based-classifiers is done
+by means of comparing their Recall.
+
+
+____W_H_A_T__I_S__R_E_C_A_L_L________
+The Recall is defined as:
+        -  .  -  .  -
+PredictedTruePositives 
+        / 
+  TotalPositivesInTheDatabase
+
+And it's mainstream interpretation 
+is that it's a measure of how many 
+positives you detected
+__________________________________
+
+------I-N-S-T-R-U-C-T-I-O-N-S-------
+1) run "bash generate_results.sh"
+2) A plot is now available at 
+   "./RESULTS/RESULTS.png".
+   Depending on your system it 
+   may open automatically!
+-----------------------------------

@@ -1,0 +1,28 @@
+INSTRUCTIONS:
+
+------what-does-it-do-???------
+1) Processses the ".MIDI" files into ".CSV"
+   and
+2) Generates 128 videos so that an online 
+   quiz can be built
+
+------how-to-run-it-???--------
+It should be run sequentially:
+  1) unzip raw_data.zip
+  2) run "python3 process1.py"
+  3) run "bash process2.sh"
+
+
+MORE:
+
+.This is a CPU-intensive script. 
+
+____________!!!!!________________
+.If an online quiz isn't desired, 
+ but the AI-based-classifiers are, 
+ this sequential-directory can be 
+ skipped because the AI-database
+ is also compressed in 
+  "../2-AI-database-building"
+ under the name 
+  "works-by-composer.zip"

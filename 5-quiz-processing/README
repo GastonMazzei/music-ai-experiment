@@ -1,0 +1,17 @@
+
+-----------------------I-N-F-O-------------
+When you run "./process.sh", this is what
+it happens:
+
+.Scripts in "./scripts" process raw-data
+ in "./raw-data" into processed-data in 
+ "./processed"
+
+.Processed data is copied to ../results/data
+
+--------------------U-S-A-G-E-------
+1) run "bash process.sh"
+2) results are in "./processed"
+   and the comparing-with-AI folder
+   ("../6-results") has its own copy
+-------------------------------------

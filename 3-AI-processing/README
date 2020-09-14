@@ -1,0 +1,24 @@
+INSTRUCTIONS:      |
+                   |
+.Run "process.sh"  |
+                   |
+-------------------.
+
+
+-------------m-o-r-e--i-n-f-o---------------------------------
+Running "process.sh" will
+
+(1): unzip the database in "../2-AI-database-building"
+
+(2): extract sound samples from it
+
+(3): make a TRAIN-VALIDATION-TEST database from it, using
+     for "test" only 16*8=128 fragments: the same that 
+     were used in the quiz.
+
+(4): train 5 Neural Networks and 5 Random Forests classifiers
+     from it and save their predictions over the testing data
+
+(5): copy their predictions to "../6-results" so they can be 
+     compared with humans predictions
+
